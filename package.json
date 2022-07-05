@@ -1,0 +1,29 @@
+{
+  "name": "ngrok-v3",
+  "version": "1.0.2",
+  "description": "rebuilt package for ngrok v3",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ngrok",
+    "tunnel",
+    "tcp",
+    "http",
+    "https"
+  ],
+  "author": "1nch (https://discord.com/users/787143988514914324 https://1nch.dev https://github.com/1nchh)",
+  "license": "ISC",
+  "types": "./build",
+  "dependencies": {
+    "@types/node": "^18.0.0"
+  },
+  "devDependencies": {
+    "axios": "^0.27.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/1nchhh/ngrok-v3"
+  }
+}
