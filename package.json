@@ -1,6 +1,6 @@
 {
   "name": "ngrok-v3",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "rebuilt package for ngrok v3",
   "main": "build/index.js",
   "scripts": {
