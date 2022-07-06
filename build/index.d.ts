@@ -27,5 +27,10 @@ declare class Ngrok {
         stderr: Buffer;
         url: URL;
     }>>;
+    static getLatestDownloadUrl(): string;
+    static downloadNgrok(): Promise<Buffer>;
+    static decompressNgrok(data: Buffer, type?: 'zip' | 'tgz'): Promise<Buffer>;
+    static installRaw(data: Buffer, pathname?: string): void;
+    static install(pathname?: string): Promise<void>;
 }
 export default Ngrok;

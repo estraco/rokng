@@ -154,5 +154,8 @@ function testAll() {
         });
     });
 }
-testAll();
+// testAll();
+_1.default.install().then(function () {
+    console.log('ngrok installed');
+});
 //# sourceMappingURL=test.js.map

@@ -2,6 +2,7 @@ import Ngrok from '.';
 import net from 'net';
 import http from 'http';
 import axios from 'axios';
+import fs from 'fs';
 
 const ngrok = new Ngrok();
 
@@ -106,4 +107,8 @@ async function testAll() {
     await testHTTP().catch(e => console.error(e));
 }
 
-testAll();
+// testAll();
+if (!Ngrok.isInstalled)
+    Ngrok.install().then(() => {
+        console.log('ngrok installed');
+    });

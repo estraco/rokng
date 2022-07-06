@@ -1,6 +1,6 @@
 {
   "name": "ngrok-v3",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "rebuilt package for ngrok v3",
   "main": "build/index.js",
   "scripts": {
@@ -17,7 +17,11 @@
   "license": "ISC",
   "types": "./build",
   "dependencies": {
-    "@types/node": "^18.0.0"
+    "@types/adm-zip": "^0.5.0",
+    "@types/node": "^18.0.0",
+    "@types/tar": "^6.1.1",
+    "adm-zip": "^0.5.9",
+    "tar": "^6.1.11"
   },
   "devDependencies": {
     "axios": "^0.27.2"
