@@ -1,6 +1,6 @@
 {
   "name": "rokng",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "rebuilt package for ngrok v3",
   "main": "build/index.js",
   "scripts": {

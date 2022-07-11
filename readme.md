@@ -19,7 +19,7 @@ async function main() {
 
     // if ngrok isn't installed, install it
     if (!installed) {
-        Ngrok.install();
+        await Ngrok.install();
     }
 
     // start a TCP tunnel to port 8080
