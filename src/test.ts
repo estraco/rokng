@@ -2,7 +2,6 @@ import Ngrok from '.';
 import net from 'net';
 import http from 'http';
 import axios from 'axios';
-import fs from 'fs';
 
 const ngrok = new Ngrok();
 

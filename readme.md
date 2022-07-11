@@ -1,15 +1,17 @@
-# Ngrok-v3
+# ROKNG
 This package is the unofficial wraper of [ngrok](https://ngrok.com) in a simple to use API.
 
 ## Install
 ```sh
-npm install ngrok-v3
+npm install rokng
 ```
 
 ## Usage
 ```ts
-import { Ngrok } from 'ngrok-v3';
-
+// ts
+import { Ngrok } from 'rokng';
+// cjs
+const Ngrok = require('rokng').default;
 
 async function main() {
     // check if ngrok is installed
