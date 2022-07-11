@@ -139,23 +139,13 @@ function testHTTP() {
         });
     }); });
 }
-function testAll() {
-    return __awaiter(this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, testTCP().catch(function (e) { return console.error(e); })];
-                case 1:
-                    _a.sent();
-                    return [4 /*yield*/, testHTTP().catch(function (e) { return console.error(e); })];
-                case 2:
-                    _a.sent();
-                    return [2 /*return*/];
-            }
-        });
-    });
-}
+// async function testAll() {
+//     await testTCP().catch(e => console.error(e));
+//     await testHTTP().catch(e => console.error(e));
+// }
 // testAll();
-_1.default.install().then(function () {
-    console.log('ngrok installed');
-});
+if (!_1.default.isInstalled)
+    _1.default.install().then(function () {
+        console.log('ngrok installed');
+    });
 //# sourceMappingURL=test.js.map

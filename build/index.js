@@ -265,7 +265,7 @@ var Ngrok = /** @class */ (function () {
         }
         else {
             child_process_1.default.exec('export PATH="' + pathname + ':$PATH"');
-            console.log("Installation completed. please put `export PATH=\"".concat(pathname, ":$PATH\"` in your ~/.bashrc or similar file."));
+            console.log("Installation completed. please put `export PATH=\"".concat(pathname, ":$PATH\"` in your ~/.bashrc or similar file, then run `source {file}` with {file} replaced with the file you edited."));
         }
     };
     Ngrok.install = function (pathname) {
@@ -285,6 +285,20 @@ var Ngrok = /** @class */ (function () {
             });
         });
     };
+    Object.defineProperty(Ngrok, "isInstalled", {
+        get: function () {
+            if (process.platform === 'win32') {
+                var data = child_process_1.default.execSync('where ngrok');
+                return data.toString().includes('ngrok.exe');
+            }
+            else {
+                var data = child_process_1.default.execSync('which ngrok');
+                return data.toString().includes('ngrok');
+            }
+        },
+        enumerable: false,
+        configurable: true
+    });
     return Ngrok;
 }());
 exports.default = Ngrok;

@@ -107,7 +107,8 @@ async function testAll() {
     await testHTTP().catch(e => console.error(e));
 }
 
-// testAll();
+testAll; // ();
+
 if (!Ngrok.isInstalled)
     Ngrok.install().then(() => {
         console.log('ngrok installed');
