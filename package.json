@@ -1,6 +1,6 @@
 {
   "name": "rokng",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "rebuilt package for ngrok v3",
   "main": "build/index.js",
   "scripts": {
@@ -26,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/1nchhh/ngrok-v3"
+    "url": "https://github.com/1nchhh/rokng"
   },
   "devDependencies": {
     "typescript": "^4.8.0-dev.20220710"
