@@ -8,7 +8,7 @@ npm install rokng
 
 ## Usage
 ```ts
-// ts
+// esm
 import { Ngrok } from 'rokng';
 // cjs
 const Ngrok = require('rokng').default;
