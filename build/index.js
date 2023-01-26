@@ -59,6 +59,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.NgrokProcess = void 0;
 var child_process_1 = __importDefault(require("child_process"));
 var axios_1 = __importDefault(require("axios"));
 var adm_zip_1 = __importDefault(require("adm-zip"));
@@ -86,8 +87,24 @@ var NgrokProcess = /** @class */ (function () {
     NgrokProcess.prototype.kill = function () {
         process.kill(this.pid);
     };
+    NgrokProcess.waitForData = function (tunnel, delay) {
+        if (delay === void 0) { delay = 100; }
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, new Promise(function (resolve) {
+                        var interval = setInterval(function () {
+                            if (tunnel.getData().host) {
+                                clearInterval(interval);
+                                resolve(tunnel.getData());
+                            }
+                        }, delay);
+                    })];
+            });
+        });
+    };
     return NgrokProcess;
 }());
+exports.NgrokProcess = NgrokProcess;
 var Ngrok = /** @class */ (function () {
     function Ngrok(path) {
         this.path = path || 'ngrok';

@@ -1,5 +1,5 @@
 /// <reference types="node" />
-declare class NgrokProcess<T> {
+export declare class NgrokProcess<T> {
     pid: number;
     type: string;
     private data;
@@ -9,8 +9,19 @@ declare class NgrokProcess<T> {
     setPID(pid: number): void;
     setType(type: string): void;
     kill(): void;
+    static waitForData(tunnel: NgrokProcess<{
+        host: string;
+        port: number;
+        stdout: Buffer;
+        stderr: Buffer;
+    }>, delay?: number): Promise<{
+        host: string;
+        port: number;
+        stdout: Buffer;
+        stderr: Buffer;
+    }>;
 }
-declare class Ngrok {
+export default class Ngrok {
     path: string;
     constructor(path?: string);
     setAuthToken(token: string): Promise<number>;
@@ -34,4 +45,3 @@ declare class Ngrok {
     static install(pathname?: string): Promise<void>;
     static get isInstalled(): boolean;
 }
-export default Ngrok;

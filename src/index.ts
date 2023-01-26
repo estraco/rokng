@@ -5,7 +5,7 @@ import tar from 'tar';
 import fs from 'fs';
 import path from 'path';
 
-class NgrokProcess<T> {
+export class NgrokProcess<T> {
     pid: number;
     type: string;
     private data: T;
@@ -35,9 +35,31 @@ class NgrokProcess<T> {
     kill() {
         process.kill(this.pid);
     }
+
+    static async waitForData(tunnel: NgrokProcess<{
+        host: string;
+        port: number;
+        stdout: Buffer;
+        stderr: Buffer;
+    }>, delay = 100): Promise<{
+        host: string;
+        port: number;
+        stdout: Buffer;
+        stderr: Buffer;
+    }> {
+        return new Promise((resolve) => {
+            const interval = setInterval(() => {
+                if (tunnel.getData().host) {
+                    clearInterval(interval);
+                    resolve(tunnel.getData());
+                }
+            }, delay);
+        });
+    }
+
 }
 
-class Ngrok {
+export default class Ngrok {
     path: string;
 
     constructor(path?: string) {
@@ -290,5 +312,3 @@ class Ngrok {
         }
     }
 }
-
-export default Ngrok;
